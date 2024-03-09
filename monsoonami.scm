@@ -1,6 +1,6 @@
-(define (script-fu-smooth-threshhold image layer)
+(define (script-fu-smooth-threshold image layer)
   (gimp-threshold layer 127 255)
-  (plug-in-gauss RUN_NONINTERACTIVE image layer 3 3 1)
+  (plug-in-gauss 1 image layer 3 3 1)
   (gimp-levels layer HISTOGRAM-VALUE 95 160 1.0 0 255)
   (gimp-displays-flush)
 )
