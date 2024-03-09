@@ -1,0 +1,1 @@
+(gimp-context-set-foreground '(255 255 0))
