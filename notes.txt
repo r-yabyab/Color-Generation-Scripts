@@ -1,0 +1,99 @@
+SF-IMAGE      "image" 0
+
+
+;list all layer ids
+;(cadr (gimp-image-get-layers 2))
+;(car (cdr gimp-image-get-layers 1))
+;change color
+;(gimp-colorize 13 281 10 10)
+;(gimp-colorize 13 (random 360) (random 100) 0)
+;(gimp-colorize 10 (random 360) (random 100) 0)
+
+;(define (changecol)
+;(gimp-colorize 13 (random 360) (random 100) 0)
+;(gimp-colorize 10 (random 360) (random 100) 0)
+;)
+
+;saturation and brightness may go to black and not change color anymore
+
+;gimp-item-get-name >> gets name of layer
+
+;(define my-list (cadr (gimp-image-get-layers 1)))
+;(define n 1)
+;(define result (list-ref my-list n))
+;(display result)
+
+; (define layers (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))
+; turn #(0 0 0) into (0 0 0), so u can access with car
+; with just gimp-image-get-layers, returns (3 #(0 0 0))
+
+
+C:\Users\cayab\Desktop\SPL\batchn,\IMG_7182-0.JPG
+***** NEED TO USE / NOT \
+(gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0.JPG")
+(car(gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-blue.png"))
+(car(gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-white.png"))
+
+(gimp-image-insert-layer SF-DRAWABLE (car(gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-blue.png")) 0 4)
+(gimp-image-insert-layer SF-DRAWABLE (car(gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-white.png")) 0 4)
+(gimp-image-insert-layer SF-DRAWABLE (car (gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0.JPG")) 0 4)
+
+(gimp-layer-translate layernum 200 0)
+(gimp-layer-translate layernum 200 0)
+(gimp-layer-translate layernum 200 0)
+
+(gimp-colorize 13 (random 360) (random 100) 0)
+(gimp-colorize 13 (random 360) (random 100) 0)
+(gimp-colorize 13 (random 360) (random 100) 0)
+
+
+rotate:
+(gimp-item-transform-rotate 5 25 TRUE 140 180)
+get position:
+(gimp-drawable-offsets 8)
+move:
+(gimp-layer-translate layernum 200 0)
+
+
+========
+1  (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))
+2  (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))
+3  (car (cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))
+4  (car (cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))
+5  (car (cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))
+6  (car (cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))
+7  (car (cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))
+8  (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))
+9  (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))
+10 (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))))
+11 (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))))
+12 (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))))))
+
+(gimp-colorize 13 (random 360) (random 100) 0)
+(gimp-colorize (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))))) (random 360) (random 100) 8)
+(gimp-colorize (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))))) (random 360) (random 100) 8)
+
+
+(gimp-layer-translate layernum 200 0)
+(gimp-layer-translate (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))) 200 0)
+(gimp-layer-translate (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))) 200 0)
+(gimp-layer-translate (car (cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))) 200 0)
+(gimp-layer-translate (car (cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))) 400 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))) 400 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))) 400 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))) 600 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))) 600 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))) 600 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))) 800 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))))))))))) 800 0)
+(gimp-layer-translate (car (cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr(cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))))))))))) 800 0)
