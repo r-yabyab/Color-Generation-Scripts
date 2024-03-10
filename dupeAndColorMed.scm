@@ -1,4 +1,4 @@
-(define (add-layers-bright)
+(define (add-layers-med)
 
 (let loop ((x 0) (y 0) (iteration 0))
   (if (< iteration 50)
@@ -9,10 +9,10 @@
         (gimp-image-insert-layer SF-DRAWABLE (car (gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-yellow.png")) 0 1)
         (gimp-image-insert-layer SF-DRAWABLE (car (gimp-file-load-layer 1 SF-DRAWABLE "\Desktop/SPL/batchn,/IMG_7182-0-transparent-green.png")) 0 1)
 
-        (gimp-colorize (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))) (random 360) (random 100) (random 100))
-        (gimp-colorize (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))) (random 360) (random 100) (random 100))
-        (gimp-colorize (car (cdr (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))) (random 360) (random 100) (random 100))
-        (gimp-colorize (car (cdr (cdr (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))) (random 360) (random 100) (random 100))
+        (gimp-colorize (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))) (random 360) (random 100) (- (random 102) 50))
+        (gimp-colorize (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))) (random 360) (random 100) (- (random 102) 50))
+        (gimp-colorize (car (cdr (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))))) (random 360) (random 100) (- (random 102) 50))
+        (gimp-colorize (car (cdr (cdr (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))))) (random 360) (random 100) (- (random 102) 50))
 
         (gimp-layer-translate (car (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE))))) x y)
         (gimp-layer-translate (car (cdr (cdr (vector->list (cadr (gimp-image-get-layers SF-DRAWABLE)))))) x y)
@@ -39,9 +39,9 @@
 )
 
 (script-fu-register
-  "add-layers-bright"
-  "<Image>/Colors/DupelicateAndColorBright"
-  "Duplicate and change colors bright."
+  "add-layers-med"
+  "<Image>/Colors/DupelicateAndColorMed"
+  "Duplicate and change colors med."
   "net"
   "net"
   "March 2024"
